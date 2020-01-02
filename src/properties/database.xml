@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<connection>
+    <server>localhost</server>
+    <port></port>
+    <user>root</user>
+    <password></password><!-- IF HAVE PASSWORD ENCRYPTION, NEED SET MODEL BELOW -->
+    <password_encryption>none</password_encryption><!-- AVAIABLE OPTION: none, base64 -->
+    <database>ristocucina</database>
+    <db_model>mysql</db_model>
+    <!-- FOR ENCODE THE PASSWORD, VISIT: http://pixys.com/b64 -->
+</connection>
+

@@ -1,0 +1,33 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# RULES FOR STATIC
+
+RewriteRule ^stylesheet/(.*)$               ./public/stylesheet/$1.css [L,QSA,NC]
+RewriteRule ^javascript/(.*)$               ./public/javascript/$1.js [L,QSA,NC]
+RewriteRule ^images/(.*)$                   ./public/images/$1 [L,QSA,NC]
+
+
+# RULES FOR BLOG
+RewriteRule ^blog/(.+)$                         ./src/components/blog/index.php?url=$1 [L,QSA,NC]
+
+# RULES FOR INTRANET
+RewriteRule ^intranet/([^/.]+)/([^/.]+)$        ./src/components/intranet/index.php?category=$1&page=$2 [L,QSA,NC]
+RewriteRule ^intranet$                          ./src/components/intranet/public/login.php [L,QSA,NC]
+
+# RULES FOR SHOP
+#RewriteRule ^produto/([0-9]+)/([^/.]+)/([^/.]+)/([^/.]+)$           ./src/components/shop/produto.php?id=$1 [L,QSA,NC]
+#RewriteRule ^produto/([0-9]+)/([^/.]+)/([^/.]+)$                    ./src/components/shop/produto.php?id=$1 [L,QSA,NC]
+#RewriteRule ^produto/([0-9]+)/([^/.]+)$                             ./src/components/shop/produto.php?id=$1 [L,QSA,NC]
+#RewriteRule ^produto/([0-9]+)$                                      ./src/components/shop/produto.php?id=$1 [L,QSA,NC]
+
+
+RewriteRule ^produto/([0-9]+)/([^/.]+)$           ./src/components/shop/produto.php?id=$1 [L,QSA,NC]
+
+
+# RULES FOR LANDING PAGE
+RewriteRule ^([a-z\-_0-9]+)/([^/.]+)$        index.php?module=$1&url=$2 [QSA,NC]
+RewriteRule ^([^/.]+)$                       index.php?url=$1 [QSA,NC]
+
+
