@@ -1,16 +1,6 @@
 <?php
 require_once("../../../../src/config/index.php");
 
-
-$security->setKey("KjaHHHSa");
-
-$texto = "mesagem padrão";
-$crypt = $security->encrypt($texto);
-$decrypt = $security->decrypt($crypt);
-
-echo "<br />padrão >" . $texto;
-echo "<br />criptografado >" . $crypt;
-echo "<br />descriptografado >" . $decrypt;
 ?>
 <html>
 <head>
